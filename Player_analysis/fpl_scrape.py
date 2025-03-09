@@ -45,13 +45,9 @@ points_per_game = filtered_df['points_per_game']
 
 wrapped_labels = wrap_labels(filtered_names, max_characters=10)
 
-
-
 ### xG Analysis ###
 xGA = ( ( 2 * filtered_df['goals_scored'] ) + (1 * filtered_df['assists']) ) / (filtered_df['minutes'] /  2)
 df['xGA'] = xGA
-
-
 
 filtered_df2 = df[df['xGA'] > 0.001]
 # filtered_df2 = filtered_df2.sort_values(by='xGA')
@@ -60,8 +56,6 @@ filtered_xGA = filtered_df2['xGA']
 filtered_names2 = filtered_df2['second_name']
 
 wrapped_labels2 = wrap_labels(filtered_names2, max_characters=10)
-
-
 
 ### Plotting ###
 fig = plt.figure(figsize=[10,9])
